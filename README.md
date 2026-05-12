@@ -1,5 +1,13 @@
 # Glass Theme — Glassmorphism Jekyll Theme
 
+[![License: csswitch Commercial](https://img.shields.io/badge/license-csswitch%20commercial-blue.svg)](./LICENSE)
+[![Buy on Gumroad](https://img.shields.io/badge/Buy-%2449-brightgreen.svg)](https://csswitch.gumroad.com/l/csswitch-glass)
+[![Live Demo](https://img.shields.io/badge/demo-live-orange.svg)](https://csswitch.github.io/jekyll-glass-theme/)
+
+> **⚠️ License notice:** This theme is source-available but **not free to use**.  
+> Viewing and learning from the code is welcome. Deploying it on any live site requires a [paid license](https://csswitch.gumroad.com/l/csswitch-glass).  
+> See [LICENSE](./LICENSE) for full terms.
+
 [![MIT License](https://img.shields.io/badge/license-MIT-purple.svg)](LICENSE)
 [![Jekyll](https://img.shields.io/badge/jekyll-4.3-purple.svg)](https://jekyllrb.com)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-compatible-purple.svg)](https://pages.github.com)

@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div class="glass-container">
+  <!-- Post header -->
+  <header class="post-header">
+    {% if page.tags.size > 0 %}
+    <div class="tags-list post-header__tags">
+      {% for tag in page.tags limit:5 %}
+      <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="tag-pill">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <h1 class="post-header__title">{{ page.title }}</h1>
+
+    <div class="post-header__meta">
+      <span class="post-header__author">
+        <span class="post-header__author-avatar" aria-hidden="true">
+          {{ site.author.name | default: 'A' | slice: 0 }}
+        </span>
+        {{ site.author.name | default: 'Author' }}
+      </span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      <span>{{ page.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+    </div>
+  </header>
+
+  <!-- Table of contents (if headings present) -->
+  {% assign headers = page.content | split: '<h' %}
+  {% if headers.size > 2 %}
+  <aside class="post-toc" aria-label="Table of contents">
+    <p class="post-toc__title">Contents</p>
+    <ol>
+      {% assign toc_headings = page.content | split: 'id="' %}
+      {% for heading in toc_headings offset:1 %}
+        {% assign id = heading | split: '"' | first %}
+        {% assign title = heading | split: '">' | last | split: '</h' | first | strip_html %}
+        {% if title and title.size > 1 %}
+        <li><a href="#{{ id }}">{{ title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </aside>
+  {% endif %}
+
+  <!-- Post body -->
+  <article class="post-body glass-card">
+    {{ content }}
+  </article>
+
+  <!-- Post navigation -->
+  <nav class="post-nav" aria-label="Post navigation">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="post-nav__item post-nav__item--prev">
+      <span class="post-nav__item-label">← Previous</span>
+      <span class="post-nav__item-title">{{ page.previous.title }}</span>
+    </a>
+    {% else %}
+    <div class="post-nav__item post-nav__item--prev" style="opacity:0.3;pointer-events:none">
+      <span class="post-nav__item-label">← Previous</span>
+      <span class="post-nav__item-title">No earlier posts</span>
+    </div>
+    {% endif %}
+
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="post-nav__item post-nav__item--next">
+      <span class="post-nav__item-label">Next →</span>
+      <span class="post-nav__item-title">{{ page.next.title }}</span>
+    </a>
+    {% else %}
+    <div class="post-nav__item post-nav__item--next" style="opacity:0.3;pointer-events:none">
+      <span class="post-nav__item-label">Next →</span>
+      <span class="post-nav__item-title">No newer posts</span>
+    </div>
+    {% endif %}
+  </nav>
+</div>

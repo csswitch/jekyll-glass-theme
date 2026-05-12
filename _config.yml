@@ -1,0 +1,60 @@
+title: "Glass Theme"
+description: "A glassmorphism Jekyll theme with frosted glass UI, ambient backgrounds, and smooth animations."
+url: "https://csswitch.github.io"
+baseurl: "/jekyll-glass-theme"
+author:
+  name: "Your Name"
+  email: "you@example.com"
+  twitter: ""
+  github: ""
+
+# Glass theme settings
+glass:
+  # Background options: "aurora", "mesh", "bokeh", "minimal"
+  background: "aurora"
+  # Accent color (hsl hue, 0-360)
+  accent_hue: 260
+  # Enable particle/orb effects in background
+  orbs: true
+  # Card blur intensity (px)
+  blur: 16
+  # Enable smooth scroll
+  smooth_scroll: true
+  # Reading progress bar
+  reading_progress: true
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+timezone: UTC
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+paginate: 6
+paginate_path: "/page:num/"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Collections
+collections:
+  pages:
+    output: true
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

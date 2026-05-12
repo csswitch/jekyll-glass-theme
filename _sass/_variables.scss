@@ -1,0 +1,88 @@
+// ============================================================
+// Glass Theme Variables
+// ============================================================
+
+// --- Accent (customizable via _config.yml glass.accent_hue) ---
+$accent-hue: 260 !default; // purple by default
+
+$accent:       hsl($accent-hue, 80%, 65%);
+$accent-light: hsl($accent-hue, 90%, 80%);
+$accent-glow:  hsla($accent-hue, 80%, 65%, 0.35);
+$accent-subtle:hsla($accent-hue, 80%, 65%, 0.12);
+
+// --- Base colors ---
+$bg-deep:    #0a0a14;
+$bg-mid:     #0f0f1e;
+$text:       rgba(255,255,255,0.92);
+$text-muted: rgba(255,255,255,0.55);
+$text-dim:   rgba(255,255,255,0.35);
+
+// --- Glass surfaces ---
+$glass-bg:      rgba(255, 255, 255, 0.06);
+$glass-bg-hover:rgba(255, 255, 255, 0.10);
+$glass-border:  rgba(255, 255, 255, 0.14);
+$glass-border-strong: rgba(255, 255, 255, 0.22);
+$glass-shadow:  0 8px 32px rgba(0, 0, 0, 0.4);
+$glass-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+$blur-amount: 16px;
+$blur-heavy:  24px;
+
+// --- Aurora orb colors ---
+$orb-1: hsl($accent-hue, 70%, 55%);
+$orb-2: hsl(($accent-hue + 60) % 360, 70%, 55%);
+$orb-3: hsl(($accent-hue + 150) % 360, 65%, 60%);
+
+// --- Typography ---
+$font-body:  'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+$font-display: 'Inter', system-ui, sans-serif;
+
+$text-xs:  0.75rem;
+$text-sm:  0.875rem;
+$text-base:1rem;
+$text-lg:  1.125rem;
+$text-xl:  1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$text-5xl: 3rem;
+
+$line-height: 1.7;
+$line-height-tight: 1.25;
+
+// --- Spacing ---
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+
+// --- Layout ---
+$container: 860px;
+$container-wide: 1100px;
+$sidebar-width: 280px;
+$nav-height: 70px;
+
+// --- Radius ---
+$radius-sm:  8px;
+$radius:     12px;
+$radius-lg:  18px;
+$radius-xl:  24px;
+$radius-full: 9999px;
+
+// --- Transitions ---
+$transition:      all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.15s ease;
+$transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+// --- Z-index ---
+$z-nav:     100;
+$z-modal:   200;
+$z-tooltip: 300;
